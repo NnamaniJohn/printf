@@ -5,7 +5,7 @@
 #include <stddef.h>
 
 /**
- * struct ft - struct
+ * struct format - struct
  * @format: format
  * @func: function
  * Description: contains the type and the format to print.
@@ -22,6 +22,6 @@ int print_char(va_list c);
 int print_string(va_list s);
 int print_num(int n);
 int print_int(va_list num);
-int print_perc();
+int print_perc(void);
 
 #endif /* MAIN_H */
