@@ -12,6 +12,8 @@ int print_string(va_list s)
 	char *str = va_arg(s, char *);
 
 	count = len = 0;
+	if (str == NULL)
+		str = "(null)";
 	while (str[len])
 		len++;
 	for (i = 0; i < len; i++)
