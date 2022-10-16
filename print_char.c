@@ -3,7 +3,7 @@
 /**
  * print_char - prints character to stdout
  * @c: character to print
- * Return: character count
+ * Return: count of character
  */
 
 int print_char(va_list c)
