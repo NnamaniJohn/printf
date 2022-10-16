@@ -12,9 +12,9 @@ int _printf(const char *format, ...)
 	va_list arg;
 	int i, j, len = 0, count = 0;
 	int get_format = 0, is_format = 0;
-	format_t f_t[] = {{'c', print_char}, {'s', print_string},
-		{'%', print_perc}, {'d', print_int}, {'i', print_int},
-		{'b', print_bin}, {'\0', NULL}
+	format_t f_t[] = {{'c', print_char}, {'s', print_string}, {'%', print_perc},
+		{'d', print_int}, {'i', print_int}, {'b', print_bin}, {'u', print_uint},
+		{'o', print_oct}, {'x', print_shex}, {'X', print_hex}, {'\0', NULL}
 	};
 
 	while (format[len])

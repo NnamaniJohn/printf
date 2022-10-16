@@ -2,7 +2,7 @@
 
 /**
  * prt_bin - print binary
- * @n: number
+ * @num: number
  * Return: character count
  */
 

@@ -20,10 +20,12 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(va_list c);
 int print_string(va_list s);
-int print_num(int n);
 int print_int(va_list num);
 int print_perc(void);
-int prt_bin(unsigned int n);
 int print_bin(va_list num);
+int print_uint(va_list num);
+int print_oct(va_list num);
+int print_hex(va_list num);
+int print_shex(va_list num);
 
 #endif /* MAIN_H */
