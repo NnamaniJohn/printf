@@ -8,12 +8,12 @@
 
 int prt_oct(unsigned int num)
 {
-	int c = 0;
+	int count = 0;
 
 	if ((num / 8) > 0)
-		c += prt_oct(num / 8);
-	c += _putchar((num % 8) + '0');
-	return (c);
+		count += prt_oct(num / 8);
+	count += _putchar((num % 8) + '0');
+	return (count);
 }
 
 /**
