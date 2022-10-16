@@ -23,7 +23,7 @@ int print_string(va_list s);
 int print_num(int n);
 int print_int(va_list num);
 int print_perc(void);
-int prt_bin(int n);
+int prt_bin(unsigned int n);
 int print_bin(va_list num);
 
 #endif /* MAIN_H */

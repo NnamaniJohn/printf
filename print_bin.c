@@ -6,16 +6,9 @@
  * Return: character count
  */
 
-int prt_bin(int n)
+int prt_bin(unsigned int num)
 {
-	unsigned int num = n;
 	int c = 0;
-
-	if (n < 0)
-	{
-		c += _putchar('-');
-		num = -num;
-	}
 
 	if ((num / 2) > 0)
 		c += prt_bin(num / 2);
@@ -31,5 +24,5 @@ int prt_bin(int n)
 
 int print_bin(va_list num)
 {
-	return (prt_bin(va_arg(num, int)));
+	return (prt_bin(va_arg(num, unsigned int)));
 }
