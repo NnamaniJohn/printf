@@ -30,5 +30,6 @@ int print_hex(va_list num);
 int print_shex(va_list num);
 int get_ft(char format, va_list arg);
 int print_sstring(va_list s);
+int print_ptr(va_list a);
 
 #endif /* MAIN_H */
