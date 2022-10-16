@@ -49,8 +49,9 @@ int print_sstring(va_list s)
 		{
 			count += _putchar('\\');
 			count += _putchar('x');
-			count += p_hex(str[i] \ 16);
+			count += p_hex(str[i] / 16);
 			count += p_hex(str[i] % 16);
+		}
 		else
 			count += _putchar(str[i]);
 	}
