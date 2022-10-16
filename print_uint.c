@@ -8,12 +8,12 @@
 
 int print_unum(unsigned int num)
 {
-	int c = 0;
+	int count = 0;
 
 	if ((num / 10) > 0)
-		c += print_unum(num / 10);
-	c += _putchar((num % 10) + '0');
-	return (c);
+		count += print_unum(num / 10);
+	count += _putchar((num % 10) + '0');
+	return (count);
 }
 
 /**
