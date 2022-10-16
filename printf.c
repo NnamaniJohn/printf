@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	int get_format = 0, is_format = 0;
 	format_t f_t[] = {{'c', print_char}, {'s', print_string},
 		{'%', print_perc}, {'d', print_int}, {'i', print_int},
-		{'\0', NULL}
+		{'b', print_bin}, {'\0', NULL}
 	};
 
 	while (format[len])
