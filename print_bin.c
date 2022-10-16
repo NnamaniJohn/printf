@@ -8,11 +8,18 @@
 
 int prt_bin(int n)
 {
+	unsigned int num = n;
 	int c = 0;
 
-	if ((n / 2) > 0)
-		c += prt_bin(n / 2);
-	c += _putchar((n % 2) + '0');
+	if (n < 0)
+	{
+		c += _putchar('-');
+		num = -num;
+	}
+
+	if ((num / 2) > 0)
+		c += prt_bin(num / 2);
+	c += _putchar((num % 2) + '0');
 	return (c);
 }
 
