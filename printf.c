@@ -36,5 +36,6 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(arg);
+	_putchar(-1);
 	return (count);
 }
