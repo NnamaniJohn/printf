@@ -13,7 +13,7 @@ int print_string(va_list s)
 
 	count = len = 0;
 	if (str == NULL)
-		str = ("(nil)");
+		str = ("(null)");
 	while (str[len])
 		len++;
 	for (i = 0; i < len; i++)
