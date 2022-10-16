@@ -3,28 +3,28 @@
 /**
  * p_hex - hex
  * @num: num
- * Return: int
+ * Return: character count
  */
 
 int p_hex(int num)
 {
-	int c = 0;
+	int count = 0;
 
 	if (num % 16 == 10)
-		c += _putchar('A');
+		count += _putchar('A');
 	else if (num % 16 == 11)
-		c += _putchar('B');
+		count += _putchar('B');
 	else if (num % 16 == 12)
-		c += _putchar('C');
+		count += _putchar('C');
 	else if (num % 16 == 13)
-		c += _putchar('D');
+		count += _putchar('D');
 	else if (num % 16 == 14)
-		c += _putchar('E');
+		count += _putchar('E');
 	else if (num % 16 == 15)
-		c += _putchar('F');
+		count += _putchar('F');
 	else
-		c += _putchar((num % 16) + '0');
-	return (c);
+		count += _putchar((num % 16) + '0');
+	return (count);
 }
 
 /**
