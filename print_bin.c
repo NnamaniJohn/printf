@@ -8,12 +8,12 @@
 
 int prt_bin(unsigned int num)
 {
-	int c = 0;
+	int count = 0;
 
 	if ((num / 2) > 0)
-		c += prt_bin(num / 2);
-	c += _putchar((num % 2) + '0');
-	return (c);
+		count += prt_bin(num / 2);
+	count += _putchar((num % 2) + '0');
+	return (count);
 }
 
 /**
