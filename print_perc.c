@@ -2,7 +2,7 @@
 
 /**
  * print_perc - print percent character
- * Return: int
+ * Return: character count
  */
 
 int print_perc(void)
