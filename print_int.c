@@ -9,17 +9,17 @@
 int print_num(int n)
 {
 	unsigned int num = n;
-	int c = 0;
+	int count = 0;
 
 	if (n < 0)
 	{
-		c += _putchar('-');
+		count += _putchar('-');
 		num = -num;
 	}
 	if ((num / 10) > 0)
-		c += print_num(num / 10);
-	c += _putchar((num % 10) + '0');
-	return (c);
+		count += print_num(num / 10);
+	count += _putchar((num % 10) + '0');
+	return (count);
 }
 
 /**
