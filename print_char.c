@@ -9,7 +9,7 @@
 int print_char(va_list c)
 {
 	int count = 0;
-	
+
 	count += _putchar(va_arg(c, int));
 	return (count);
 }

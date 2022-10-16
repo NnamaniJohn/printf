@@ -17,15 +17,16 @@ int _printf(const char *format, ...)
 		{'s', print_string},
 		{'%', print_perc},
 		{'d', print_int},
+		{'i', print_int},
 		{'\0', NULL}
 	};
-	
+
 	len = count = 0;
-	while(format[len])
+	while (format[len])
 		len++;
-	
+
 	va_start(arg, format);
-	for(i = 0; i < len; i++)
+	for (i = 0; i < len; i++)
 	{
 		if (get_format)
 		{
@@ -47,4 +48,3 @@ int _printf(const char *format, ...)
 	va_end(arg);
 	return (count);
 }
-

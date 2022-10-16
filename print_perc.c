@@ -5,8 +5,7 @@
  * Return: int
  */
 
-int print_perc()
+int print_perc(void)
 {
 	return (_putchar('%'));
 }
-

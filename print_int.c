@@ -10,7 +10,7 @@ int print_num(int n)
 {
 	unsigned int num = n;
 	int c = 0;
-	
+
 	if (n < 0)
 	{
 		c += _putchar('-');
@@ -32,4 +32,3 @@ int print_int(va_list num)
 {
 	return (print_num(va_arg(num, int)));
 }
-

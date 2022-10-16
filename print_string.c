@@ -10,7 +10,7 @@ int print_string(va_list s)
 {
 	int i, count, len;
 	char *str = va_arg(s, char *);
-	
+
 	count = len = 0;
 	while (str[len])
 		len++;
@@ -20,4 +20,3 @@ int print_string(va_list s)
 	}
 	return (count);
 }
-
