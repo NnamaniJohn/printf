@@ -10,21 +10,15 @@
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	int i, j, len, count;
+	int i, j, len = 0, count = 0;
 	int get_format = 0, is_format = 0;
-	format_t f_t[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'%', print_perc},
-		{'d', print_int},
-		{'i', print_int},
+	format_t f_t[] = {{'c', print_char}, {'s', print_string},
+		{'%', print_perc}, {'d', print_int}, {'i', print_int},
 		{'\0', NULL}
 	};
 
-	len = count = 0;
 	while (format[len])
 		len++;
-
 	va_start(arg, format);
 	for (i = 0; i < len; i++)
 	{
