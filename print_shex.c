@@ -38,13 +38,14 @@ int prt_shex(unsigned int num)
 int print_shex(va_list num, flag_t *flag)
 {
 	int count = 0;
+	int n = va_arg(num, unsigned int);
 	
-	if (flag->hash)
+	if (flag->hash && n != 0)
 	{
 		count += _putchar('0');
 		count += _putchar('x');
 		flag->hash = 0;
 	}
-	count += prt_shex(va_arg(num, unsigned int));
+	count += prt_shex(n);
 	return (count);
 }

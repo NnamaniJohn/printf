@@ -25,13 +25,14 @@ int prt_oct(unsigned int num)
 int print_oct(va_list num, flag_t *flag)
 {
 	int count = 0;
+	int n = va_arg(num, unsigned int);
 
-	if (flag->hash)
+	if (flag->hash && n != 0)
 	{
 		count += _putchar('0');
 		flag->hash = 0;
 	}
 
-	count += prt_oct(va_arg(num, unsigned int));
+	count += prt_oct(n);
 	return (count);
 }

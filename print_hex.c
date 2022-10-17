@@ -38,14 +38,15 @@ int prt_hex(unsigned int num)
 int print_hex(va_list num, flag_t *flag)
 {
 	int count = 0;
+	int n = va_arg(num, unsigned int);
 	
-	if (flag->hash)
+	if (flag->hash && n != 0)
 	{
 		count += _putchar('0');
 		count += _putchar('X');
 		flag->hash = 0;
 	}
 
-	count += prt_hex(va_arg(num, unsigned int));
+	count += prt_hex(n);
 	return (count);
 }
