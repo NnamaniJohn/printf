@@ -24,6 +24,16 @@ int _get_flg(char format, flag_t *flg)
 		flg->hash = 1;
 		return (1);
 	}
+	else if (format == 'l')
+	{
+		flg->lon = 1;
+		return (1);
+	}
+	else if (format == 'h')
+	{
+		flg->sht = 1;
+		return (1);
+	}
 	else
 		return (0);
 }
