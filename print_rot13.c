@@ -10,7 +10,7 @@ int print_rot13(va_list r)
 {
 	unsigned int i, j, count;
 	char *str;
-	int printed;
+	/*int printed;*/
 	/*char prev_char[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char hash_char[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";*/
 	char *prev_char, *hash_char;
