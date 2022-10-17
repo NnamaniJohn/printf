@@ -39,6 +39,8 @@ int get_ft(char format, va_list arg, flag_t *flag)
 			flag->plus = 0;
 		}
 		flag->space = 0;
+		flag->lon = 0;
+		flag->sht = 0;
 		count += _putchar(format);
 	}
 	return (count);

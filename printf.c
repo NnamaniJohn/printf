@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	va_list arg;
 	int i, len = 0, count = 0;
 	int get_format = 0;
-	flag_t flags = {0, 0, 0};
+	flag_t flags = {0, 0, 0, 0, 0};
 
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
