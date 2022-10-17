@@ -27,13 +27,8 @@ int print_rot13(va_list r)
 				break;
 			}
 		}
-		for (j = 0; prev_char[j]; j++)
-		{
-			if (prev_char[j] != str[i] && !prev_char[j])
-				count += _putchar(str[j]);
-			else
-				continue;
-		}
+		if (!prev_char[j])
+			count += _putchar(str[j]);
 	}
 	return (count);
 }
