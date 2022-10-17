@@ -24,9 +24,9 @@ int _printf(const char *format, ...)
 	{
 		if (get_format)
 		{
-			if (!get_flag(format[i], flags))
+			if (!_get_flg(format[i], &flags))
 			{
-				count += get_ft(format[i], arg);
+				count += get_ft(format[i], arg, &flags);
 				get_format = 0;
 			}
 		}

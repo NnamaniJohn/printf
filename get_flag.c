@@ -7,7 +7,7 @@
  * Return: int
  */
 
-int get_flag(char format, flag_t *flg)
+int _get_flg(char format, flag_t *flg)
 {
 	if (format == '+')
 	{
