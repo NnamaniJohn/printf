@@ -35,7 +35,17 @@ int prt_hex(unsigned int num)
  * Return: int
  */
 
-int print_hex(va_list num)
+int print_hex(va_list num, flag_t *flag)
 {
-	return (prt_hex(va_arg(num, unsigned int)));
+	int count = 0;
+	
+	if (flag->hash)
+	{
+		count += _putchar('0');
+		count += _putchar('X');
+		flag->hash = 0;
+	}
+
+	count += prt_hex(va_arg(num, unsigned int));
+	return (count);
 }

@@ -28,6 +28,17 @@ int get_ft(char format, va_list arg, flag_t *flag)
 	if (!is_format)
 	{
 		count += _putchar('%');
+		if (flag->hash)
+		{
+			count += _putchar('#');
+			flag->hash = 0;
+		}
+		if (flag->plus)
+		{
+			count += _putchar('+');
+			flag->plus = 0;
+		}
+		flag->space = 0;
 		count += _putchar(format);
 	}
 	return (count);
