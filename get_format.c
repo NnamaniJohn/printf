@@ -12,8 +12,8 @@ int get_ft(char format, va_list arg)
 	int j, is_format = 0, count = 0;
 	format_t f_t[] = {{'c', print_char}, {'s', print_string}, {'%', print_perc},
 		{'d', print_int}, {'i', print_int}, {'b', print_bin}, {'u', print_uint},
-		{'o', print_oct}, {'x', print_shex}, {'X', print_hex},
-		{'S', print_sstring}, {'p', print_ptr}, {'r', print_rev}, {'\0', NULL}
+		{'o', print_oct}, {'x', print_shex}, {'X', print_hex}, {'S', print_sstring},
+		{'p', print_ptr}, {'r', print_rev}, {'R', print_rot13}, {'\0', NULL}
 	};
 
 	for (j = 0; f_t[j].format; j++)

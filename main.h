@@ -33,5 +33,6 @@ int get_ft(char format, va_list arg);
 int print_sstring(va_list s);
 int print_ptr(va_list a);
 int print_rev(va_list r);
+int print_rot13(va_list r);
 
 #endif /* MAIN_H */
