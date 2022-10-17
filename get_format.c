@@ -13,7 +13,7 @@ int get_ft(char format, va_list arg, flag_t *flag)
 	format_t f_t[] = {{'c', print_char}, {'s', print_string}, {'%', print_perc},
 		{'d', print_int}, {'i', print_int}, {'b', print_bin}, {'u', print_uint},
 		{'o', print_oct}, {'x', print_shex}, {'X', print_hex},
-		{'S', print_sstring}, {'p', print_ptr}, {'\0', NULL}
+		{'S', print_sstring}, {'p', print_ptr}, {'r', print_rev}, {'\0', NULL}
 	};
 
 	for (j = 0; f_t[j].format; j++)

@@ -4,6 +4,7 @@
 #include <stdarg.h>
 #include <stddef.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 /**
  * struct flags - flag
@@ -47,5 +48,6 @@ int get_ft(char format, va_list arg, flag_t *flag);
 int print_sstring(va_list s);
 int print_ptr(va_list a);
 int _get_flg(char format, flag_t *flg);
+int print_rev(va_list r);
 
 #endif /* MAIN_H */
