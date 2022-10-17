@@ -28,7 +28,7 @@ int print_rot13(va_list r)
 			}
 		}
 		if (!prev_char[j])
-			count += _putchar(str[j]);
+			count += _putchar(str[i]);
 	}
 	return (count);
 }
