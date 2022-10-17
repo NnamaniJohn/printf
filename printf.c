@@ -11,6 +11,7 @@ int _printf(const char *format, ...)
 	va_list arg;
 	int i, len = 0, count = 0;
 	int get_format = 0;
+	flag_t flags = {0, 0, 0};
 
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
@@ -23,8 +24,11 @@ int _printf(const char *format, ...)
 	{
 		if (get_format)
 		{
-			count += get_ft(format[i], arg);
-			get_format = 0;
+			if (!_get_flg(format[i], &flags))
+			{
+				count += get_ft(format[i], arg, &flags);
+				get_format = 0;
+			}
 		}
 		else
 		{

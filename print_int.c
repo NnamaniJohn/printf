@@ -6,16 +6,10 @@
  * Return: character count
  */
 
-int print_num(int n)
+int print_num(int num)
 {
-	unsigned int num = n;
 	int count = 0;
 
-	if (n < 0)
-	{
-		count += _putchar('-');
-		num = -num;
-	}
 	if ((num / 10) > 0)
 		count += print_num(num / 10);
 	count += _putchar((num % 10) + '0');
@@ -28,7 +22,23 @@ int print_num(int n)
  * Return: character count
  */
 
-int print_int(va_list num)
+int print_int(va_list ar, flag_t *flag)
 {
-	return (print_num(va_arg(num, int)));
+	int n = va_arg(ar, int);
+	unsigned int num = n;
+	int count = 0;
+
+	if (n < 0)
+	{
+		count += _putchar('-');
+		num = -num;
+	}
+	else if (flag->plus)
+	{
+		count += _putchar('+');
+		flag->plus = 0;
+	}
+	count += print_num(num);
+
+	return (count);
 }
