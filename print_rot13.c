@@ -25,7 +25,7 @@ int print_rot13(va_list r)
 				break;
 			}
 		}
-		if (!prev_char[j])
+		if (str[i] < 'A' || (str[i] > 'Z' && str[i] < 'a') || str[j] > 'z')
 			count += _putchar(str[i]);
 	}
 	return (count);
