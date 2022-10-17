@@ -4,6 +4,7 @@
 #include <stdarg.h>
 #include <stddef.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 /**
  * struct format - struct
@@ -31,5 +32,6 @@ int print_shex(va_list num);
 int get_ft(char format, va_list arg);
 int print_sstring(va_list s);
 int print_ptr(va_list a);
+int print_rev(va_list r);
 
 #endif /* MAIN_H */
