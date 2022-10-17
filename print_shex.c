@@ -35,7 +35,16 @@ int prt_shex(unsigned int num)
  * Return: int
  */
 
-int print_shex(va_list num)
+int print_shex(va_list num, flag_t *flag)
 {
-	return (prt_shex(va_arg(num, unsigned int)));
+	int count = 0;
+	
+	if (flag->hash)
+	{
+		count += _putchar('0');
+		count += _putchar('x');
+		flag->hash = 0;
+	}
+	count += prt_shex(va_arg(num, unsigned int));
+	return (count);
 }

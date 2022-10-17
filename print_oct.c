@@ -22,7 +22,16 @@ int prt_oct(unsigned int num)
  * Return: int
  */
 
-int print_oct(va_list num)
+int print_oct(va_list num, flag_t *flag)
 {
-	return (prt_oct(va_arg(num, unsigned int)));
+	int count = 0;
+
+	if (flag->hash)
+	{
+		count += _putchar('0');
+		flag->hash = 0;
+	}
+
+	count += prt_oct(va_arg(num, unsigned int));
+	return (count);
 }

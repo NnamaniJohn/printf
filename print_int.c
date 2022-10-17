@@ -38,6 +38,11 @@ int print_int(va_list ar, flag_t *flag)
 		count += _putchar('+');
 		flag->plus = 0;
 	}
+	else if (flag->space)
+	{
+		count += _putchar(' ');
+		flag->space = 0;
+	}
 	count += print_num(num);
 
 	return (count);
