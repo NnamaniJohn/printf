@@ -15,7 +15,7 @@ int print_rev(va_list r)
 	str = va_arg(r, char *);
 
 	if (str == NULL)
-		str = ")llun(";
+		str = "(null)";
 	for (i = 0; str[i]; i++)
 		;
 	for (--i; i >= 0; i--)
