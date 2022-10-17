@@ -6,10 +6,17 @@
  * Return: character count
  */
 
-int print_num(int num)
+int print_num(int n)
 {
+	unsigned int num = n;
 	int count = 0;
 
+	if (n < 0)
+	{
+		count += _putchar('-');
+		num = -num;
+	}
+	
 	if ((num / 10) > 0)
 		count += print_num(num / 10);
 	count += _putchar((num % 10) + '0');
@@ -22,12 +29,13 @@ int print_num(int num)
  * Return: character count
  */
 
-int print_lnum(long int num)
+int print_lnum(unsigned long int n)
 {
+	unsigned long int num = n;
 	int count = 0;
 
 	if ((num / 10) > 0)
-		count += print_num(num / 10);
+		count += print_lnum(num / 10);
 	count += _putchar((num % 10) + '0');
 	return (count);
 }
@@ -38,12 +46,13 @@ int print_lnum(long int num)
  * Return: character count
  */
 
-int print_hnum(short int num)
+int print_hnum(unsigned short int n)
 {
+	unsigned short int num = n;
 	int count = 0;
 
 	if ((num / 10) > 0)
-		count += print_num(num / 10);
+		count += print_hnum(num / 10);
 	count += _putchar((num % 10) + '0');
 	return (count);
 }
@@ -57,30 +66,24 @@ int print_hnum(short int num)
 int print_int(va_list ar, flag_t *flag)
 {
 	int n = va_arg(ar, int);
-	unsigned int num = n;
 	int count = 0;
-
-	if (n < 0)
-	{
-		count += _putchar('-');
-		num = -num;
-	}
-	else if (flag->plus)
+	
+	if (flag->plus && n >= 0)
 	{
 		count += _putchar('+');
 		flag->plus = 0;
 	}
-	else if (flag->space)
+	else if (flag->space && n >= 0)
 	{
 		count += _putchar(' ');
 		flag->space = 0;
 	}
 	if (flag->lon)
-		count += print_lnum(num);
+		count += print_lnum(n);
 	else if (flag->sht)
-		count += print_hnum(num);
+		count += print_hnum(n);
 	else
-		count += print_num(num);
+		count += print_num(n);
 
 	return (count);
 }
