@@ -1,6 +1,38 @@
 #include "main.h"
 
 /**
+ * prt_loct - print binary
+ * @num: number
+ * Return: character count
+ */
+
+int prt_loct(unsigned long int num)
+{
+	int count = 0;
+
+	if ((num / 8) > 0)
+		count += prt_loct(num / 8);
+	count += _putchar((num % 8) + '0');
+	return (count);
+}
+
+/**
+ * prt_hoct - print binary
+ * @num: number
+ * Return: character count
+ */
+
+int prt_hoct(unsigned short int num)
+{
+	int count = 0;
+
+	if ((num / 8) > 0)
+		count += prt_hoct(num / 8);
+	count += _putchar((num % 8) + '0');
+	return (count);
+}
+
+/**
  * prt_oct - print binary
  * @num: number
  * Return: character count
@@ -33,6 +65,11 @@ int print_oct(va_list num, flag_t *flag)
 		flag->hash = 0;
 	}
 
-	count += prt_oct(n);
+	if (flag->lon)
+		count += prt_loct(n);
+	else if (flag->sht)
+		count += prt_hoct(n);
+	else
+		count += prt_oct(n);
 	return (count);
 }
