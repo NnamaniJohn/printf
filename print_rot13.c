@@ -14,8 +14,6 @@ int print_rot13(va_list r)
 	char hash_char[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	str = va_arg(r, char *);
-	if (str == NULL)
-		str = "(null)";
 
 	for (i = 0; str[i]; i++)
 	{
