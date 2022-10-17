@@ -39,7 +39,7 @@ int print_ptr(va_list a)
 {
 	unsigned long int arg;
 	unsigned int count, i;
-	char *null = ("(null)");
+	char *null = ("(nil)");
 
 	count = 0;
 	arg = va_arg(a, unsigned long int);
