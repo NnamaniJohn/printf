@@ -16,8 +16,6 @@ int print_rot13(va_list r)
 
 	str = va_arg(r, char *);
 
-	if (!str)
-		str = ("(avy)");
 	for (i = 0; str[i]; i++)
 	{
 		printed = 0;
@@ -29,10 +27,12 @@ int print_rot13(va_list r)
 				printed = 1;
 				break;
 			}
+			else if (str[i] != prev_char[j] && (printed == 0 || !prev_char[j]))
+				count += _putchar(str[i]);
 
 		}
-		if (printed == 0 || !prev_char[j])
-			count += _putchar(str[i]);
+		/*if (printed == 0 || !prev_char[j])
+			count += _putchar(str[i]);*/
 	}
 	return (count);
 }
