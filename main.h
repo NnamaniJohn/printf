@@ -6,6 +6,21 @@
 #include <unistd.h>
 
 /**
+ * struct flags - flag
+ * @plus: +
+ * @space: space
+ * @hash: #
+ * Description: contains flags
+ */
+
+typedef struct flags
+{
+	int plus;
+	int space;
+	int hash;
+} flag_t;
+
+/**
  * struct format - struct
  * @format: format
  * @func: function
@@ -31,5 +46,6 @@ int print_shex(va_list num);
 int get_ft(char format, va_list arg);
 int print_sstring(va_list s);
 int print_ptr(va_list a);
+int get_flags(char format, flag_t flg);
 
 #endif /* MAIN_H */
