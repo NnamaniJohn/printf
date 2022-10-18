@@ -16,13 +16,12 @@ int print_string(va_list s, flag_t *flag)
 		str = ("(null)");
 	while (str[len])
 		len++;
-	for (i = 0; i < len; i++)
-	{
-		count += _bputchar(str[i]);
-	}
-	width = count;
+	width = len;
 	for (i = 0; i < flag->width - width; i++)
 		count += _putchar(' ');
-	_bputchar(-1);
+	for (i = 0; i < len; i++)
+	{
+		count += _putchar(str[i]);
+	}
 	return (count);
 }

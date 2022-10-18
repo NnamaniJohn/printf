@@ -8,15 +8,15 @@
 
 int _bputchar(char c)
 {
-	static char buf[99999999];
+	static char buf[1024];
 	static int i;
-	int j;
+	static int j;
 
-	if (c == -1)
+	if (c == -1 || i >= 1024)
 	{
-		for (j = 0; j <= i; j++)
+		for (; j <= i; j++)
 			_putchar(buf[j]);
-		i = 0;
+		j = i = 0;
 	}
 	if (c != -1)
 	{
