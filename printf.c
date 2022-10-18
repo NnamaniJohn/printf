@@ -24,12 +24,12 @@ int _printf(const char *format, ...)
 	{
 		if (get_format)
 		{
-			if (!get_width && !g_wd && !get_len)
+			/*if (!get_width && !g_wd && !get_len)*/
 				get_flg = _get_flg(format[i], &flags);
-			if (!get_len)
+			/*if (!get_len)*/
 				get_width = _get_width(format[i], &flags);
-			if (get_width)
-				g_wd = 1;
+			/*if (get_width)
+				g_wd = 1;*/
 			get_len = _get_len(format[i], &flags);
 			if (!get_flg && !get_width && !get_len)	
 			{
