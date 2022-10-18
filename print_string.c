@@ -17,11 +17,19 @@ int print_string(va_list s, flag_t *flag)
 	while (str[len])
 		len++;
 	width = len;
-	for (i = 0; i < flag->width - width; i++)
-		count += _putchar(' ');
+	if (!flag->minus)
+	{
+		for (i = 0; i < flag->width - width; i++)
+			count += _putchar(' ');
+	}
 	for (i = 0; i < len; i++)
 	{
 		count += _putchar(str[i]);
+	}
+	if (flag->minus)
+	{
+		for (i = 0; i < flag->width - width; i++)
+			count += _putchar(' ');
 	}
 	return (count);
 }
