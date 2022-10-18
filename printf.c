@@ -31,6 +31,8 @@ int _printf(const char *format, ...)
 			{
 				count += get_ft(format[i], arg, &flags);
 				get_format = 0;
+				get_width = 0;
+				get_flg = 0;
 			}
 		}
 		else

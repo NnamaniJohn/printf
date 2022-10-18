@@ -28,21 +28,21 @@ int main(void)
     printf("Unsigned octal:[%ho]\n", ui);
     _printf("Unsigned hexadecimal:[%23x, %23X]\n", ui, ui);
     printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-    _printf("Character:[%c]\n", 'H');
-    printf("Character:[%c]\n", 'H');
-    len = _printf("String:[%s]\n", "I am a string !");
-    len2 = printf("String:[%s]\n", "I am a string !");
+    _printf("Character:[%3c]\n", 'H');
+    printf("Character:[%3c]\n", 'H');
+    len = _printf("String:[%20s]\n", "I am a string !");
+    len2 = printf("String:[%20s]\n", "I am a string !");
     if (len == len2)
 	    printf("same\n");
-    _printf("Address:[%p]\n", addr);
-    printf("Address:[%p]\n", addr);
+    _printf("Address:[%20p]\n", addr);
+    printf("Address:[%20p]\n", addr);
     len = _printf("Percent:[%%]\n");
     len2 = printf("Percent:[%%]\n");
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
-    len = _printf("");
+    len = _printf("\n");
     _printf("% d\n", 67);
     return (0);
 }
