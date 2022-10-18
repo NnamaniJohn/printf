@@ -100,16 +100,15 @@ int print_hex(va_list num, flag_t *flag)
 	
 	if (flag->hash && n != 0)
 	{
-		if (flag->zero)
+		/*if (flag->zero)
 		{
 			count += _putchar('0');
 			count += _putchar('X');
 		}
 		else
-		{
+		{*/
 			count += _bputchar('0');
 			count += _bputchar('X');
-		}
 		flag->hash = 0;
 	}
 
