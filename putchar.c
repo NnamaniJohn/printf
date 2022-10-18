@@ -8,19 +8,19 @@
 
 int _bputchar(char c)
 {
-	static char buf[1024];
+	static char buff[99999];
 	static int i;
 	static int j;
 
-	if (c == -1 || i >= 1024)
+	if (c == -1 || i >= 99999)
 	{
 		for (; j <= i; j++)
-			_putchar(buf[j]);
+			_putchar(buff[j]);
 		j = i = 0;
 	}
 	if (c != -1)
 	{
-		buf[i] = c;
+		buff[i] = c;
 		i++;
 	}
 	return (1);
