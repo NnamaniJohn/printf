@@ -14,7 +14,7 @@ int _bputchar(char c)
 
 	if (c == -1 || i >= 99999)
 	{
-		for (; j <= i; j++)
+		for (; j < i; j++)
 			_putchar(buff[j]);
 		j = i = 0;
 	}
