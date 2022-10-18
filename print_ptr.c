@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * _prt_hex - print hexadecimal
@@ -13,19 +14,19 @@ int _prt_hex(unsigned long int num)
 	if ((num / 16) > 0)
 		count += _prt_hex(num / 16);
 	if (num % 16 == 10)
-		count += _putchar('a');
+		count += _bputchar('a');
 	else if (num % 16 == 11)
-		count += _putchar('b');
+		count += _bputchar('b');
 	else if (num % 16 == 12)
-		count += _putchar('c');
+		count += _bputchar('c');
 	else if (num % 16 == 13)
-		count += _putchar('d');
+		count += _bputchar('d');
 	else if (num % 16 == 14)
-		count += _putchar('e');
+		count += _bputchar('e');
 	else if (num % 16 == 15)
-		count += _putchar('f');
+		count += _bputchar('f');
 	else
-		count += _putchar((num % 16) + '0');
+		count += _bputchar((num % 16) + '0');
 	return (count);
 }
 
@@ -35,10 +36,11 @@ int _prt_hex(unsigned long int num)
  * Return: character count
  */
 
-int print_ptr(va_list a)
+int print_ptr(va_list a, flag_t *flag)
 {
 	unsigned long int arg;
 	unsigned int count, i;
+	int width, j;
 	char *null = ("(nil)");
 
 	count = 0;
@@ -46,14 +48,18 @@ int print_ptr(va_list a)
 	if (!arg)
 	{
 		for (i = 0; null[i]; i++)
-			count += _putchar(null[i]);
+			count += _bputchar(null[i]);
 	}
 	else
 	{
-		_putchar('0');
-		_putchar('x');
+		_bputchar('0');
+		_bputchar('x');
 		count += 2;
 		count += _prt_hex(arg);
 	}
+	width = count;
+	for (j = 0; j < flag->width - width; j++)
+		count += _putchar(' ');
+	_bputchar(-1);
 	return (count);
 }
