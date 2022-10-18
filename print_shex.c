@@ -112,7 +112,7 @@ int print_shex(va_list num, flag_t *flag)
 		count += prt_shex(n);
 	width = count;
 	for (i = 0; i < flag->width - width; i++)
-		count += _putchar('0');
+		count += _putchar(' ');
 	_bputchar(-1);
 	return (count);
 }

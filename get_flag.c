@@ -34,6 +34,11 @@ int _get_flg(char format, flag_t *flg)
 		flg->sht = 1;
 		return (1);
 	}
+	else if (format == '0')
+	{
+		flg->zero = 1;
+		return (1);
+	}
 	else
 		return (0);
 }

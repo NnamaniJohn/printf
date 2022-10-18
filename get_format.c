@@ -49,5 +49,6 @@ int get_ft(char format, va_list arg, flag_t *flag)
 	flag->lon = 0;
 	flag->sht = 0;
 	flag->width = 0;
+	flag->zero = 0;
 	return (count);
 }

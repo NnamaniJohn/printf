@@ -22,6 +22,7 @@ typedef struct flags
 	int lon;
 	int sht;
 	int width;
+	int zero;
 } flag_t;
 
 /**
