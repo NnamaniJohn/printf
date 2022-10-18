@@ -100,8 +100,8 @@ int print_shex(va_list num, flag_t *flag)
 	
 	if (flag->hash && n != 0)
 	{
-		count += _putchar('0');
-		count += _putchar('x');
+		count += _bputchar('0');
+		count += _bputchar('x');
 		flag->hash = 0;
 	}
 	if (flag->lon)

@@ -61,7 +61,7 @@ int print_oct(va_list num, flag_t *flag)
 
 	if (flag->hash && n != 0)
 	{
-		count += _putchar('0');
+		count += _bputchar('0');
 		flag->hash = 0;
 	}
 

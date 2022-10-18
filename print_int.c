@@ -80,12 +80,12 @@ int print_int(va_list ar, flag_t *flag)
 	
 	if (flag->plus && n >= 0)
 	{
-		count += _putchar('+');
+		count += _bputchar('+');
 		flag->plus = 0;
 	}
 	else if (flag->space && n >= 0)
 	{
-		count += _putchar(' ');
+		count += _bputchar(' ');
 		flag->space = 0;
 	}
 	if (flag->lon)
