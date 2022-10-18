@@ -3,6 +3,7 @@
 /**
  * print_string - prints string to stdout
  * @s: string to print
+ * @flag: flag
  * Return: count of character
  */
 

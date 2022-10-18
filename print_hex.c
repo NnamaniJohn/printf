@@ -90,6 +90,7 @@ int prt_hex(unsigned int num)
 /**
  * print_hex - prints hexadecimal
  * @num: number
+ * @flag: flag
  * Return: int
  */
 
@@ -97,18 +98,11 @@ int print_hex(va_list num, flag_t *flag)
 {
 	int count = 0, width, i;
 	int n = va_arg(num, unsigned int);
-	
+
 	if (flag->hash && n != 0)
 	{
-		/*if (flag->zero)
-		{
-			count += _putchar('0');
-			count += _putchar('X');
-		}
-		else
-		{*/
-			count += _bputchar('0');
-			count += _bputchar('X');
+		count += _bputchar('0');
+		count += _bputchar('X');
 		flag->hash = 0;
 	}
 

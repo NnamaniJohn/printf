@@ -16,7 +16,7 @@ int print_num(int n)
 		count += _bputchar('-');
 		num = -num;
 	}
-	
+
 	if ((num / 10) > 0)
 		count += print_num(num / 10);
 	count += _bputchar((num % 10) + '0');
@@ -46,7 +46,7 @@ int print_lnum(long int n)
 }
 
 /**
- * print_num - print number
+ * print_hnum - print number
  * @n: number to print
  * Return: character count
  */
@@ -69,7 +69,8 @@ int print_hnum(short int n)
 
 /**
  * print_int - prints int to stdout
- * @num: integer number
+ * @ar: arg
+ * @flag: flag
  * Return: character count
  */
 
@@ -77,13 +78,10 @@ int print_int(va_list ar, flag_t *flag)
 {
 	long int n = va_arg(ar, long int);
 	int count = 0, width, i;
-	
+
 	if (flag->plus && n >= 0)
 	{
-		/*if (flag->zero)
-			count += _putchar('+');
-		else*/
-			count += _bputchar('+');
+		count += _bputchar('+');
 		flag->plus = 0;
 	}
 	else if (flag->space && n >= 0)

@@ -51,6 +51,7 @@ int print_uhnum(unsigned short int num)
 /**
  * print_uint - prints unsigned int to stdout
  * @num: unsigned integer number
+ * @flag: flag
  * Return: character count
  */
 

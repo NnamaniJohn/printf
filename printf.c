@@ -31,11 +31,10 @@ int _printf(const char *format, ...)
 			if (get_width)
 				g_wd = 1;
 			get_len = _get_len(format[i], &flags);
-			if (!get_flg && !get_width && !get_len)	
+			if (!get_flg && !get_width && !get_len)
 			{
 				count += get_ft(format[i], arg, &flags);
-				get_format = 0;
-				g_wd = 0;
+				get_format = g_wd = 0;
 			}
 		}
 		else

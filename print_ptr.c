@@ -32,6 +32,7 @@ int _prt_hex(unsigned long int num)
 /**
  * print_ptr - prints a pointer
  * @a: the address to print
+ * @flag: flag
  * Return: character count
  */
 

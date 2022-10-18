@@ -4,6 +4,7 @@
  * get_ft - get format
  * @format: format
  * @arg: arg
+ * @flag: fkag
  * Return: count
  */
 

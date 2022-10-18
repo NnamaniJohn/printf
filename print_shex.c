@@ -90,6 +90,7 @@ int prt_shex(unsigned int num)
 /**
  * print_shex - prints hexadecimal
  * @num: number
+ * @flag: flag
  * Return: int
  */
 
@@ -97,7 +98,7 @@ int print_shex(va_list num, flag_t *flag)
 {
 	int count = 0, width, i;
 	int n = va_arg(num, unsigned int);
-	
+
 	if (flag->hash && n != 0)
 	{
 		count += _bputchar('0');

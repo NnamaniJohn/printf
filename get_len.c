@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * get_len - set flags
+ * _get_len - set flags
  * @format: flag format
  * @flg: flag to set
  * Return: int

@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * _get_width - get width
+ * @format: format
+ * @flag: flag
+ * Return: int
+ */
 
 int _get_width(char format, flag_t *flag)
 {
