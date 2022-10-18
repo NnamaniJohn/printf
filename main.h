@@ -38,8 +38,8 @@ typedef struct format
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-int print_char(va_list c);
-int print_string(va_list s);
+int print_char(va_list c, flag_t *flag);
+int print_string(va_list s, flag_t *flag);
 int print_int(va_list num, flag_t *flag);
 int print_perc(void);
 int print_bin(va_list num);

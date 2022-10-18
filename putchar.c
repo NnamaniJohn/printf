@@ -8,11 +8,11 @@
 
 int _bputchar(char c)
 {
-	static char buf[1024];
+	static char buf[99999999];
 	static int i;
 	int j;
 
-	if (c == -1 || i >= 1024)
+	if (c == -1)
 	{
 		for (j = 0; j <= i; j++)
 			_putchar(buf[j]);
