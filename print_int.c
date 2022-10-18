@@ -100,7 +100,7 @@ int print_int(va_list ar, flag_t *flag)
 		if (flag->zero)
 			count += _putchar('0');
 		else
-			count += _putchar('0');
+			count += _putchar(' ');
 	}
 	_bputchar(-1);
 	return (count);
