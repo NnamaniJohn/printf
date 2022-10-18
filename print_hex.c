@@ -111,9 +111,12 @@ int print_hex(va_list num, flag_t *flag)
 		count += prt_hhex(n);
 	else
 		count += prt_hex(n);
+	if (flag->minus)
+		_bputchar(-1);
 	width = count;
 	for (i = 0; i < flag->width - width; i++)
 		count += _putchar(' ');
-	_bputchar(-1);
+	if (!flag->minus)
+		_bputchar(-1);
 	return (count);
 }
