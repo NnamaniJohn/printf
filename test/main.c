@@ -20,10 +20,10 @@ int main(void)
     addr = (void *)0x7ffe637541f0;
     _printf("Length:[%ld, %  i]\n", len, len);
     printf("Length:[%ld, %i]\n", len2, len2);
-    _printf("Negative:[%ld]\n", -762534);
-    printf("Negative:[%ld]\n", -762534);
-    _printf("Unsigned:[%hu]\n", ui);
-    printf("Unsigned:[%hu]\n", ui);
+    _printf("Negative:[%ld]\n", -63889);
+    printf("Negative:[%ld]\n", -63889);
+    _printf("Unsigned:[%lu]\n", ui);
+    printf("Unsigned:[%lu]\n", ui);
     _printf("Unsigned octal:[%ho]\n", ui);
     printf("Unsigned octal:[%ho]\n", ui);
     _printf("Unsigned hexadecimal:[%#hx, %lX]\n", ui, ui);

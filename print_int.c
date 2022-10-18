@@ -29,11 +29,16 @@ int print_num(int n)
  * Return: character count
  */
 
-int print_lnum(unsigned long int n)
+int print_lnum(long int n)
 {
 	unsigned long int num = n;
 	int count = 0;
 
+	if (n < 0)
+	{
+		count += _putchar('-');
+		num = -num;
+	}
 	if ((num / 10) > 0)
 		count += print_lnum(num / 10);
 	count += _putchar((num % 10) + '0');
@@ -46,11 +51,16 @@ int print_lnum(unsigned long int n)
  * Return: character count
  */
 
-int print_hnum(unsigned short int n)
+int print_hnum(short int n)
 {
 	unsigned short int num = n;
 	int count = 0;
 
+	if (n < 0)
+	{
+		count += _putchar('-');
+		num = -num;
+	}
 	if ((num / 10) > 0)
 		count += print_hnum(num / 10);
 	count += _putchar((num % 10) + '0');
@@ -65,7 +75,7 @@ int print_hnum(unsigned short int n)
 
 int print_int(va_list ar, flag_t *flag)
 {
-	int n = va_arg(ar, int);
+	long int n = va_arg(ar, long int);
 	int count = 0;
 	
 	if (flag->plus && n >= 0)
