@@ -4,7 +4,7 @@
  * _get_flg - set flags
  * @format: flag format
  * @flg: flag to set
- * Return: int
+ * Return: 1 if flag is found, 0 otherwise
  */
 
 int _get_flg(char format, flag_t *flg)
