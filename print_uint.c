@@ -68,7 +68,10 @@ int print_uint(va_list num, flag_t *flag)
 		_bputchar(-1);
 	width = count;
 	for (i = 0; i < flag->width - width; i++)
-		count += _putchar(' ');
+		if (flag->zero)
+			count += _putchar('0');
+		else
+			count += _putchar(' ');
 	if (!flag->minus)
 		_bputchar(-1);
 	return (count);
