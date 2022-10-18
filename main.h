@@ -55,5 +55,6 @@ int print_rev(va_list r);
 int print_rot13(va_list r);
 int _get_width(char format, flag_t *flag);
 int _bputchar(char c);
+int print_num(int n);
 
 #endif /* MAIN_H */

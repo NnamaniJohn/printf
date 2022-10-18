@@ -43,6 +43,6 @@ int main(void)
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
     len = _printf("\n");
-    _printf("% d\n", 67);
+    _printf("%4+d\n", 67);
     return (0);
 }
