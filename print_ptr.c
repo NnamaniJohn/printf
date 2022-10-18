@@ -58,7 +58,12 @@ int print_ptr(va_list a, flag_t *flag)
 	}
 	width = count;
 	for (j = 0; j < flag->width - width; j++)
-		count += _putchar(' ');
+	{
+		if (flag->zero)
+			count += _putchar('0');
+		else
+			count += _putchar(' ');
+	}
 	_bputchar(-1);
 	return (count);
 }
