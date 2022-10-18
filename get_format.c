@@ -28,19 +28,19 @@ int get_ft(char format, va_list arg, flag_t *flag)
 	if (!is_format)
 	{
 		count += _putchar('%');
+		if (flag->hash)
+			count += _putchar('#');
+		if (flag->plus)
+			count += _putchar('+');
 		if (flag->width > 0)
 		{
 			count += print_num(flag->width);
 			_bputchar(-1);
 		}
-		if (flag->hash)
-		{
-			count += _putchar('#');
-		}
-		if (flag->plus)
-		{
-			count += _putchar('+');
-		}
+		if (flag->lon)
+			count += _putchar('l');
+		if (flag->sht)
+			count += _putchar('h');
 		count += _putchar(format);
 	}
 	flag->hash = 0;

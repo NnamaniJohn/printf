@@ -58,5 +58,6 @@ int print_rot13(va_list r);
 int _get_width(char format, flag_t *flag);
 int _bputchar(char c);
 int print_num(int n);
+int _get_len(char format, flag_t *flg);
 
 #endif /* MAIN_H */
