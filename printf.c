@@ -9,9 +9,9 @@
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	int i, len = 0, count = 0;
-	int get_format = 0;
-	flag_t flags = {0, 0, 0, 0, 0};
+	int i, len = 0, count = 0, get_len = 0;
+	int get_format = 0, get_width = 0, get_flg = 0;
+	flag_t flags = {0, 0, 0, 0, 0, 0, 0, 0};
 
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
@@ -24,10 +24,18 @@ int _printf(const char *format, ...)
 	{
 		if (get_format)
 		{
-			if (!_get_flg(format[i], &flags))
+			/*if (!get_width && !g_wd && !get_len)*/
+				get_flg = _get_flg(format[i], &flags);
+			/*if (!get_len)*/
+				get_width = _get_width(format[i], &flags);
+			/*if (get_width)
+				g_wd = 1;*/
+			get_len = _get_len(format[i], &flags);
+			if (!get_flg && !get_width && !get_len)	
 			{
 				count += get_ft(format[i], arg, &flags);
 				get_format = 0;
+				/*g_wd = 0;*/
 			}
 		}
 		else

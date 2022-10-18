@@ -13,13 +13,13 @@ int print_num(int n)
 
 	if (n < 0)
 	{
-		count += _putchar('-');
+		count += _bputchar('-');
 		num = -num;
 	}
 	
 	if ((num / 10) > 0)
 		count += print_num(num / 10);
-	count += _putchar((num % 10) + '0');
+	count += _bputchar((num % 10) + '0');
 	return (count);
 }
 
@@ -36,12 +36,12 @@ int print_lnum(long int n)
 
 	if (n < 0)
 	{
-		count += _putchar('-');
+		count += _bputchar('-');
 		num = -num;
 	}
 	if ((num / 10) > 0)
 		count += print_lnum(num / 10);
-	count += _putchar((num % 10) + '0');
+	count += _bputchar((num % 10) + '0');
 	return (count);
 }
 
@@ -58,12 +58,12 @@ int print_hnum(short int n)
 
 	if (n < 0)
 	{
-		count += _putchar('-');
+		count += _bputchar('-');
 		num = -num;
 	}
 	if ((num / 10) > 0)
 		count += print_hnum(num / 10);
-	count += _putchar((num % 10) + '0');
+	count += _bputchar((num % 10) + '0');
 	return (count);
 }
 
@@ -76,16 +76,19 @@ int print_hnum(short int n)
 int print_int(va_list ar, flag_t *flag)
 {
 	long int n = va_arg(ar, long int);
-	int count = 0;
+	int count = 0, width, i;
 	
 	if (flag->plus && n >= 0)
 	{
-		count += _putchar('+');
+		if (flag->zero)
+			count += _putchar('+');
+		else
+			count += _bputchar('+');
 		flag->plus = 0;
 	}
 	else if (flag->space && n >= 0)
 	{
-		count += _putchar(' ');
+		count += _bputchar(' ');
 		flag->space = 0;
 	}
 	if (flag->lon)
@@ -94,6 +97,17 @@ int print_int(va_list ar, flag_t *flag)
 		count += print_hnum(n);
 	else
 		count += print_num(n);
-
+	if (flag->minus)
+		_bputchar(-1);
+	width = count;
+	for (i = 0; i < flag->width - width; i++)
+	{
+		if (flag->zero)
+			count += _putchar('0');
+		else
+			count += _putchar(' ');
+	}
+	if (!flag->minus)
+		_bputchar(-1);
 	return (count);
 }

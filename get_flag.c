@@ -24,14 +24,14 @@ int _get_flg(char format, flag_t *flg)
 		flg->hash = 1;
 		return (1);
 	}
-	else if (format == 'l')
+	else if (format == '0')
 	{
-		flg->lon = 1;
+		flg->zero = 1;
 		return (1);
 	}
-	else if (format == 'h')
+	else if (format == '-')
 	{
-		flg->sht = 1;
+		flg->minus = 1;
 		return (1);
 	}
 	else

@@ -6,9 +6,9 @@
  * Return: count of character
  */
 
-int print_string(va_list s)
+int print_string(va_list s, flag_t *flag)
 {
-	int i, count, len;
+	int i, count, len, width;
 	char *str = va_arg(s, char *);
 
 	count = len = 0;
@@ -16,9 +16,20 @@ int print_string(va_list s)
 		str = ("(null)");
 	while (str[len])
 		len++;
+	width = len;
+	if (!flag->minus)
+	{
+		for (i = 0; i < flag->width - width; i++)
+			count += _putchar(' ');
+	}
 	for (i = 0; i < len; i++)
 	{
 		count += _putchar(str[i]);
+	}
+	if (flag->minus)
+	{
+		for (i = 0; i < flag->width - width; i++)
+			count += _putchar(' ');
 	}
 	return (count);
 }
