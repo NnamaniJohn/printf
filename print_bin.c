@@ -17,9 +17,9 @@ int prt_bin(unsigned int num)
 }
 
 /**
- * print_bin - prints binary
+ * print_bin - prints binary caller function
  * @num: number
- * Return: int
+ * Return: character count
  */
 
 int print_bin(va_list num)
