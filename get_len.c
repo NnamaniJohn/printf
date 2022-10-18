@@ -4,7 +4,7 @@
  * _get_len - set flags
  * @format: flag format
  * @flg: flag to set
- * Return: int
+ * Return: 1 if long(l) and short(h) flag is found, 0 otherwise
  */
 
 int _get_len(char format, flag_t *flg)
