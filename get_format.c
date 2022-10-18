@@ -33,6 +33,8 @@ int get_ft(char format, va_list arg, flag_t *flag)
 			count += _putchar('#');
 		if (flag->plus)
 			count += _putchar('+');
+		if (flag->prec)
+			count += _putchar('.');
 		if (flag->width > 0)
 		{
 			count += print_num(flag->width);
@@ -52,5 +54,6 @@ int get_ft(char format, va_list arg, flag_t *flag)
 	flag->width = 0;
 	flag->zero = 0;
 	flag->minus = 0;
+	flag->prec = 0;
 	return (count);
 }
