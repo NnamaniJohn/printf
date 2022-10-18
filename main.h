@@ -21,6 +21,7 @@ typedef struct flags
 	int hash;
 	int lon;
 	int sht;
+	int width;
 } flag_t;
 
 /**
@@ -52,5 +53,7 @@ int print_ptr(va_list a);
 int _get_flg(char format, flag_t *flg);
 int print_rev(va_list r);
 int print_rot13(va_list r);
+int _get_width(char format, flag_t *flag);
+int _bputchar(char c);
 
 #endif /* MAIN_H */

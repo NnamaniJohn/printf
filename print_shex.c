@@ -13,19 +13,19 @@ int prt_lshex(unsigned long int num)
 	if ((num / 16) > 0)
 		count += prt_lshex(num / 16);
 	if (num % 16 == 10)
-		count += _putchar('a');
+		count += _bputchar('a');
 	else if (num % 16 == 11)
-		count += _putchar('b');
+		count += _bputchar('b');
 	else if (num % 16 == 12)
-		count += _putchar('c');
+		count += _bputchar('c');
 	else if (num % 16 == 13)
-		count += _putchar('d');
+		count += _bputchar('d');
 	else if (num % 16 == 14)
-		count += _putchar('e');
+		count += _bputchar('e');
 	else if (num % 16 == 15)
-		count += _putchar('f');
+		count += _bputchar('f');
 	else
-		count += _putchar((num % 16) + '0');
+		count += _bputchar((num % 16) + '0');
 	return (count);
 }
 
@@ -42,19 +42,19 @@ int prt_hshex(unsigned short int num)
 	if ((num / 16) > 0)
 		count += prt_hshex(num / 16);
 	if (num % 16 == 10)
-		count += _putchar('a');
+		count += _bputchar('a');
 	else if (num % 16 == 11)
-		count += _putchar('b');
+		count += _bputchar('b');
 	else if (num % 16 == 12)
-		count += _putchar('c');
+		count += _bputchar('c');
 	else if (num % 16 == 13)
-		count += _putchar('d');
+		count += _bputchar('d');
 	else if (num % 16 == 14)
-		count += _putchar('e');
+		count += _bputchar('e');
 	else if (num % 16 == 15)
-		count += _putchar('f');
+		count += _bputchar('f');
 	else
-		count += _putchar((num % 16) + '0');
+		count += _bputchar((num % 16) + '0');
 	return (count);
 }
 
@@ -71,19 +71,19 @@ int prt_shex(unsigned int num)
 	if ((num / 16) > 0)
 		count += prt_shex(num / 16);
 	if (num % 16 == 10)
-		count += _putchar('a');
+		count += _bputchar('a');
 	else if (num % 16 == 11)
-		count += _putchar('b');
+		count += _bputchar('b');
 	else if (num % 16 == 12)
-		count += _putchar('c');
+		count += _bputchar('c');
 	else if (num % 16 == 13)
-		count += _putchar('d');
+		count += _bputchar('d');
 	else if (num % 16 == 14)
-		count += _putchar('e');
+		count += _bputchar('e');
 	else if (num % 16 == 15)
-		count += _putchar('f');
+		count += _bputchar('f');
 	else
-		count += _putchar((num % 16) + '0');
+		count += _bputchar((num % 16) + '0');
 	return (count);
 }
 
@@ -95,7 +95,7 @@ int prt_shex(unsigned int num)
 
 int print_shex(va_list num, flag_t *flag)
 {
-	int count = 0;
+	int count = 0, width, i;
 	int n = va_arg(num, unsigned int);
 	
 	if (flag->hash && n != 0)
@@ -110,5 +110,9 @@ int print_shex(va_list num, flag_t *flag)
 		count += prt_hshex(n);
 	else
 		count += prt_shex(n);
+	width = count;
+	for (i = 0; i < flag->width - width; i++)
+		count += _putchar(' ');
+	_bputchar(-1);
 	return (count);
 }

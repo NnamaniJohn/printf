@@ -12,7 +12,7 @@ int prt_loct(unsigned long int num)
 
 	if ((num / 8) > 0)
 		count += prt_loct(num / 8);
-	count += _putchar((num % 8) + '0');
+	count += _bputchar((num % 8) + '0');
 	return (count);
 }
 
@@ -28,7 +28,7 @@ int prt_hoct(unsigned short int num)
 
 	if ((num / 8) > 0)
 		count += prt_hoct(num / 8);
-	count += _putchar((num % 8) + '0');
+	count += _bputchar((num % 8) + '0');
 	return (count);
 }
 
@@ -44,7 +44,7 @@ int prt_oct(unsigned int num)
 
 	if ((num / 8) > 0)
 		count += prt_oct(num / 8);
-	count += _putchar((num % 8) + '0');
+	count += _bputchar((num % 8) + '0');
 	return (count);
 }
 
@@ -56,7 +56,7 @@ int prt_oct(unsigned int num)
 
 int print_oct(va_list num, flag_t *flag)
 {
-	int count = 0;
+	int count = 0, width, i;
 	int n = va_arg(num, unsigned int);
 
 	if (flag->hash && n != 0)
@@ -71,5 +71,9 @@ int print_oct(va_list num, flag_t *flag)
 		count += prt_hoct(n);
 	else
 		count += prt_oct(n);
+	width = count;
+	for (i = 0; i < flag->width - width; i++)
+		count += _putchar(' ');
+	_bputchar(-1);
 	return (count);
 }
