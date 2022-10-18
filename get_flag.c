@@ -39,6 +39,11 @@ int _get_flg(char format, flag_t *flg)
 		flg->zero = 1;
 		return (1);
 	}
+	else if (format == '-')
+	{
+		flg->minus = 1;
+		return (1);
+	}
 	else
 		return (0);
 }

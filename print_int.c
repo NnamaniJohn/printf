@@ -94,6 +94,8 @@ int print_int(va_list ar, flag_t *flag)
 		count += print_hnum(n);
 	else
 		count += print_num(n);
+	if (flag->minus)
+		_bputchar(-1);
 	width = count;
 	for (i = 0; i < flag->width - width; i++)
 	{
@@ -102,6 +104,7 @@ int print_int(va_list ar, flag_t *flag)
 		else
 			count += _putchar(' ');
 	}
-	_bputchar(-1);
+	if (!flag->minus)
+		_bputchar(-1);
 	return (count);
 }
