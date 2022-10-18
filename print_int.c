@@ -104,7 +104,7 @@ int print_int(va_list ar, flag_t *flag)
 
 	for (i = 0; i < flag->width - width; i++)
 	{
-		if (flag->zero)
+		if (flag->zero || flag->prec)
 			count += _putchar('0');
 		else
 			count += _putchar(' ');

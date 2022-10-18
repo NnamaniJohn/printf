@@ -29,6 +29,7 @@ typedef struct flags
 	int width;
 	int zero;
 	int minus;
+	int prec;
 } flag_t;
 
 /**
