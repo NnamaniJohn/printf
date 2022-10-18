@@ -112,6 +112,7 @@ int print_hex(va_list num, flag_t *flag)
 		count += prt_hhex(n);
 	else
 		count += prt_hex(n);
+
 	if (flag->minus)
 		_bputchar(-1);
 	width = count;
@@ -122,7 +123,9 @@ int print_hex(va_list num, flag_t *flag)
 		else
 			count += _putchar(' ');
 	}
+
 	if (!flag->minus)
 		_bputchar(-1);
+
 	return (count);
 }

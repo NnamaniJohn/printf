@@ -11,6 +11,11 @@
  * @plus: +
  * @space: space
  * @hash: #
+ * @lon: long
+ * @sht: short
+ * @width: field width
+ * @zero: 0 flag
+ * @minus: - flag
  * Description: contains flags
  */
 
@@ -28,7 +33,7 @@ typedef struct flags
 } flag_t;
 
 /**
- * struct format - struct
+ * struct format - struct to get print format according to conversion specifier
  * @format: format
  * @func: function
  * Description: contains the type and the format to print.

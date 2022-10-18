@@ -4,7 +4,8 @@
  * _get_width - get width
  * @format: format
  * @flag: flag
- * Return: int
+ * Return: 1 if field width is specified, 0 otherwise or
+ * if specified field width has been read
  */
 
 int _get_width(char format, flag_t *flag)

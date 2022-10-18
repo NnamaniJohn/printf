@@ -5,7 +5,7 @@
  * @format: format
  * @arg: arg
  * @flag: fkag
- * Return: count
+ * Return: character count
  */
 
 int get_ft(char format, va_list arg, flag_t *flag)
