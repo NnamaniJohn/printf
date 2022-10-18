@@ -99,6 +99,14 @@ int print_int(va_list ar, flag_t *flag)
 		count += print_num(n);
 	if (flag->minus)
 		_bputchar(-1);
+	if (n < 0)
+	{
+		if (flag->zero)
+			count += _putchar('-');
+		else
+			count += _bputchar('-');
+		n = -n;
+	}
 	width = count;
 	for (i = 0; i < flag->width - width; i++)
 	{
