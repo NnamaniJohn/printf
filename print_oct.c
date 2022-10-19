@@ -77,7 +77,7 @@ int print_oct(va_list num, flag_t *flag)
 	width = count;
 	for (i = 0; i < flag->width - width; i++)
 	{
-		if (flag->zero)
+		if (flag->zero || flag->prec)
 			count += _putchar('0');
 		else
 			count += _putchar(' ');
