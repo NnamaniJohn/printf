@@ -4,7 +4,7 @@
  * print_string - prints string to stdout
  * @s: string to print
  * @flag: flag
- * Return: count of character
+ * Return: character count
  */
 
 int print_string(va_list s, flag_t *flag)
