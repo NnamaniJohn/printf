@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_rot13 - prints a string in rot13
+ * print_rot13 - prints a string in rot13 to stdout
  * @r: argument list
  * Return: character count
  */
