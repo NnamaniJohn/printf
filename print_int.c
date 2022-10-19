@@ -79,7 +79,7 @@ int print_int(va_list ar, flag_t *flag)
 	long int n = va_arg(ar, long int);
 	int count = 0, width, i;
 
-	if (flag->plus && n >= 0)
+	if (flag->plus && (int) n >= 0)
 	{
 		count += _bputchar('+');
 		flag->plus = 0;
