@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * prt_lshex - print hexadecimal
+ * prt_lshex - print hexadecimal of argument to stdout
  * @num: number
  * Return: character count
  */
