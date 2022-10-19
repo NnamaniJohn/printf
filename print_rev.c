@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_rev - prints a string in reverse
+ * print_rev - prints a string in reverse to stdout
  * @r: argument list
  * Return: character count
  */

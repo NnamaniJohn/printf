@@ -89,15 +89,19 @@ int print_int(va_list ar, flag_t *flag)
 		count += _bputchar(' ');
 		flag->space = 0;
 	}
+
 	if (flag->lon)
 		count += print_lnum(n);
 	else if (flag->sht)
 		count += print_hnum(n);
 	else
 		count += print_num(n);
+
 	if (flag->minus)
 		_bputchar(-1);
+
 	width = count;
+
 	for (i = 0; i < flag->width - width; i++)
 	{
 		if (flag->zero || flag->prec)
@@ -105,6 +109,7 @@ int print_int(va_list ar, flag_t *flag)
 		else
 			count += _putchar(' ');
 	}
+
 	if (!flag->minus)
 		_bputchar(-1);
 	return (count);

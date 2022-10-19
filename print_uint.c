@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_unum - print number
+ * print_unum - prints unsigned number
  * @num: number to print
  * Return: character count
  */
@@ -17,7 +17,7 @@ int print_unum(unsigned int num)
 }
 
 /**
- * print_ulnum - print number
+ * print_ulnum - print unsigned long number
  * @num: number to print
  * Return: character count
  */

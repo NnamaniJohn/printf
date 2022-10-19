@@ -3,7 +3,7 @@
 /**
  * _bputchar - writes to stdout
  * @c: character to write
- * Return: number of character writen
+ * Return: number of character written
  */
 
 int _bputchar(char c)
@@ -29,7 +29,7 @@ int _bputchar(char c)
 /**
  * _putchar - writes to stdout
  * @c: character to write
- * Return: number of character writen
+ * Return: number of character written
  */
 
 int _putchar(char c)

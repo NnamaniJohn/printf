@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _prt_hex - print hexadecimal
+ * _prt_hex - print hexadecimal of argument
  * @num: number
  * Return: character count
  */

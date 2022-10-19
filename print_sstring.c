@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * p_hex - hex
+ * p_hex - prints hexadecimal in uppercase
  * @num: num
  * Return: character count
  */
